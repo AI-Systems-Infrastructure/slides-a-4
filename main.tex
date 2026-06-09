@@ -126,7 +126,7 @@ from torchvision.models import resnet18, ResNet18_Weights
 weights = ResNet18_Weights.DEFAULT
 model = resnet18(weights=weights)
 model.eval()  # Put model in evaluation mode
-preprocess = weights.transforms()  # Build-in preprocess pipeline
+preprocess = weights.transforms()  # Built-in preprocess pipeline
 categories = weights.meta["categories"]  # All candidate categories
     \end{minted}
 \end{frame}
@@ -413,7 +413,7 @@ class APIRequest(Base):
 
 
 \begin{frame}[fragile]{Logging each request}
-...and insert a database entry everytime a request is processed.
+...and insert a database entry every time a request is processed.
 
     \begin{minted}{python}
 @app.post("/v1/classify")
@@ -522,9 +522,6 @@ def check_rate_limit(user: User, db: Session):
         \item Add a sliding-window rate limit with a low cap (e.g., 5 per minute), then send a burst of requests from the A.2 program and watch \texttt{429}s come back
         \item If you have a real LLM available, build \texttt{/v1/chat/stream} that forwards an SSE stream from the model
     \end{enumerate}
-
-    \vspace{0.5em}
-    Finish all three and you have an AI API server that behaves like a real one: authenticates users, tracks usage, limits abuse, and streams responses.
 \end{frame}
 
 \begin{frame}{What you should walk away with}
@@ -532,7 +529,7 @@ def check_rate_limit(user: User, db: Session):
     \begin{enumerate}
         \item Understand how AI models are integrated into API servers
         \item Know common FastAPI practices in an AI-enabled API server
-        \item Design and implement an AI API server behaves like a real one
+        \item Design and implement an AI API server that behaves like a real one
     \end{enumerate}
 
     \vspace{0.5em}
